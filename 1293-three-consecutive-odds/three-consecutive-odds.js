@@ -3,21 +3,16 @@
  * @return {boolean}
  */
 var threeConsecutiveOdds = function(arr) {
-    
-    let h=[]
-    for(let f of arr){
-        if(f%2!=0){
-           h.push(f)
-        }else{
-            h=[]
+    let count = 0;
+
+    for (let num of arr) {
+        if (num % 2 !== 0) {
+            count++;
+            if (count === 3) return true;
+        } else {
+            count = 0;
         }
-        if(h.length==3){
-            console.log(h)
-            return true
-        }
-        
     }
-    return false
-    
+
+    return false;
 };
-threeConsecutiveOdds([2,6,4,1])
